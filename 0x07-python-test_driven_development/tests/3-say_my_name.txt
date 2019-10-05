@@ -8,12 +8,12 @@ Import module:
     >>> say_my_name = __import__('3-say_my_name').say_my_name
 
 Test basic:
-	>>> say_my_name("Boaty", "McBoatFace")
+    >>> say_my_name("Boaty", "McBoatFace")
     My name is Boaty McBoatyFace
 
 Test firstname:
 	>>> say_my_name("Boaty")
-	My name is Boaty
+    My name is Boaty
 
 Test lastname empty:
 	>>> say_my_name("Boaty", "")
