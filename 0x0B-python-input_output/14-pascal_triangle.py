@@ -4,9 +4,8 @@
 
 def pascal_triangle(n):
     '''Method that solves pascal's triangle.'''
-    trow = [1]
-    y = [0]
-    for x in range(max(n,0)):
-      print(trow)
-      trow=[l+r for l,r in zip(trow+y, y+trow)]
-    return n>=1
+    rows = [[1 for j in range(i + 1)] for i in range(n)]
+    for n in range(n):
+        for i in range(n - 1):
+            rows[n][i + 1] = sum(rows[n - 1][i:i + 2])
+    return rows
