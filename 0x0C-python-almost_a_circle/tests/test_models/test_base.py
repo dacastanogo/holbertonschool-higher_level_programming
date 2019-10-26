@@ -3,6 +3,7 @@
 
 
 import unittest
+import pep8
 from models import base
 from models.base import Base
 Base = Base
@@ -69,6 +70,12 @@ class TestBaseClass(unittest.TestCase):
 
         b5 = Base()
         self.assertEqual(b5.id, 4)
+    
+    def test_pep8_conformance(self):
+        """ Test for PEP8 ok. """
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/base.py', 'models/rectangle.py', 'models/square.py'])
+        self.assertEqual(result.total_errors, 0)
 
 if __name__ == '__main__':
     unittest.main()
