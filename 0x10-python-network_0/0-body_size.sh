@@ -1,3 +1,3 @@
 #!/bin/bash
-# Curls request and display bytes received
-curl -so /dev/null -w '%{size_download}\n' "$1"
+# Curls request and display bytes
+curl -Si "$1" | grep "Content-Length" | cut -d ':' -f 2
